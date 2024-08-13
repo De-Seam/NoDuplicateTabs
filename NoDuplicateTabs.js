@@ -8,8 +8,6 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 const duplicateTab = tabs.find(t => t.id !== tabId);
 
                 if (duplicateTab) {
-                    console.log("Switching From: ", tabId)
-                    console.log("Switching To: ", duplicateTab.id)
                     // First, close the current tab
                     browser.tabs.remove(tabId).then(() => {
                         // After closing the tab, switch to the existing tab with the same URL
