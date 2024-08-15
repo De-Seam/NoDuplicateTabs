@@ -1,17 +1,22 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "NoDuplicateTabs",
   "version": "1.1",
   "description": "Removes duplicate tabs",
   "background": {
-    "scripts": ["NoDuplicateTabs.js"],
-    "persistent": false
+    "service_worker": "NoDuplicateTabs.js"
   },
   "permissions": [
     "tabs",
-	"storage"
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*/*"
   ],
   "web_accessible_resources": [
-    "UrlsToClose.txt"
+    {
+      "resources": ["UrlsToClose.txt"],
+      "matches": ["*://*/*"]
+    }
   ]
 }
