@@ -8,11 +8,10 @@
     "persistent": false
   },
   "permissions": [
-    "tabs"
+    "tabs",
+	"storage"
   ],
-  "applications": {
-    "gecko": {
-      "id": "no-duplicate-tabs@mydomain.com"
-    }
-  }
+  "web_accessible_resources": [
+    "UrlsToClose.txt"
+  ]
 }
